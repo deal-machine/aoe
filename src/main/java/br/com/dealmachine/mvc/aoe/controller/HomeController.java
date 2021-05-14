@@ -19,7 +19,7 @@ public class HomeController {
 	@GetMapping("/home")
 	public String home(Model model) {
 		
-		List<OrderArt> orderArts = orderRepository.getOrders();
+		List<OrderArt> orderArts = orderRepository.findAll();
 		
 		model.addAttribute("orders", orderArts);
 		
