@@ -20,16 +20,15 @@ public class HomeController {
 		Order order = new Order();
 		
 		order.setName("Notebook Acer");
-		//order.setDateDelivery("2007-12-03");
-		order.setUrlImage("urlImage");
-		order.setUrlProduct("urlProduct");
+		order.setUrlImage("https://www.alura.com.br/assets/api/cursos/spring-mvc-thymeleaf-bootstrap.svg");
+		order.setUrlProduct("https://static.javatpoint.com/images/logo/jtp_logo.png");
 		order.setValue(15.10);	
-		order.setDescription("Description");
+		order.setDateDelivery("2021-05-14");
+		order.setDescription("Description of this images and products");
 		
 		List<Order> orders = Arrays.asList(order);
 		
 		model.addAttribute("orders", orders);
-		
 		
 		return "home";
 	}
