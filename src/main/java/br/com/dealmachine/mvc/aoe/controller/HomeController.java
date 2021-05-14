@@ -2,30 +2,24 @@ package br.com.dealmachine.mvc.aoe.controller;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import br.com.dealmachine.mvc.aoe.model.OrderArt;
+import br.com.dealmachine.mvc.aoe.repository.OrderArtRepository;
 
 @Controller
 public class HomeController {
 	
-	@PersistenceContext
-	private EntityManager EntityManager;
-	
-	
+	@Autowired
+	private OrderArtRepository orderRepository = null;
+
 	@GetMapping("/home")
 	public String home(Model model) {
 		
-		Query query = EntityManager.createQuery("select p from OrderArt p", OrderArt.class);
-		List<OrderArt> orderArts = query.getResultList();
-		
-		
+		List<OrderArt> orderArts = orderRepository.getOrders();
 		
 		model.addAttribute("orders", orderArts);
 		
