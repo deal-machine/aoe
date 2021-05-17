@@ -23,7 +23,7 @@ public class OrderController {
 	
 	@GetMapping("orderform")
 	public String form(OrderFormDTO orderFormDTO) {
-		System.out.println("HERE");
+		
 		return "orderform";
 	}
 	
