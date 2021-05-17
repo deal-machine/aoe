@@ -1,10 +1,15 @@
 package br.com.dealmachine.mvc.aoe.dto;
 
+import javax.validation.constraints.NotBlank;
+
 import br.com.dealmachine.mvc.aoe.model.OrderArt;
 
-public class OrderForm {
+public class OrderFormDTO {
+	@NotBlank//NotBlank.OrderFormDTO=campo deve ser preenchido
 	private String product;
+	@NotBlank
 	private String urlProduct;
+	@NotBlank
 	private String urlImagem;
 	private String description;
 	
