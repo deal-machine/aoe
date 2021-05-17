@@ -3,6 +3,7 @@ package br.com.dealmachine.mvc.aoe.dto;
 import javax.validation.constraints.NotBlank;
 
 import br.com.dealmachine.mvc.aoe.model.OrderArt;
+import br.com.dealmachine.mvc.aoe.model.Status;
 
 public class OrderFormDTO {
 	@NotBlank//NotBlank.OrderFormDTO=campo deve ser preenchido
@@ -45,6 +46,7 @@ public class OrderFormDTO {
 		orderArt.setDescription(description);
 		orderArt.setUrlImage(urlImagem);
 		orderArt.setUrlProduct(urlProduct);
+		orderArt.setStatus(Status.AGUARDANDO);
 		return orderArt;
 	}
 	

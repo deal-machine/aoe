@@ -36,6 +36,6 @@ public class OrderController {
 		OrderArt orderArt = orderFormDTO.toOrderArt();
 				orderRepository.save(orderArt);
 				
-		return "home";
+		return "redirect:/home";
 	}
 }

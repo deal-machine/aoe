@@ -1,6 +1,8 @@
 package br.com.dealmachine.mvc.aoe.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,6 +22,18 @@ public class OrderArt {
 	private String urlImage;
 	private String description;
 	
+	@Enumerated(EnumType.STRING)
+	private Status status;
+	
+	public Status getStatus() {
+		return status;
+	}
+	
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
