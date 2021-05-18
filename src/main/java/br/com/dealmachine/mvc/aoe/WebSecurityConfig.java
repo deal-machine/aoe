@@ -20,10 +20,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	//authorization
 		http
 			.authorizeRequests()
-			.anyRequest()
-			.authenticated()
-				.and()
-				.formLogin(form -> form.loginPage("/login").permitAll());
+				.anyRequest().authenticated()
+			.and()
+				.formLogin(form -> form.loginPage("/login").permitAll())
+				.logout(logout -> logout.logoutSuccessUrl("/logout"));
 	}
 	
 	@Bean
