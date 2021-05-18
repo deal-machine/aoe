@@ -1,5 +1,6 @@
 package br.com.dealmachine.mvc.aoe.controller;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,8 @@ public class HomeController {
 	private OrderArtRepository orderRepository = null;
 	
 	@GetMapping
-	public String home(Model model) {
-		List<OrderArt> orderArts = orderRepository.findAll();
+	public String home(Model model, Principal principal) {
+		List<OrderArt> orderArts = orderRepository.findAllByUser(principal.getName());
 		
 		model.addAttribute("orders", orderArts);
 		
