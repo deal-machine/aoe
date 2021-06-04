@@ -42,7 +42,8 @@ public class OrderController {
 		
 		OrderArt orderArt = orderFormDTO.toOrderArt();
 		orderArt.setUser(user);
-				orderRepository.save(orderArt);
+		
+		orderRepository.save(orderArt);
 				
 		return "redirect:/home";
 	}
